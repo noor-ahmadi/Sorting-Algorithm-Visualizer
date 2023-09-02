@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorting Visualization</title>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    
+    <script src="http://localhost:3000/socket.io/socket.io.js"></script>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Sorting Visualizer</a>
+    </nav>
+    <div class="container-fluid mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header text-center">
+                        <h4>Select a Sorting Algorithm</h4>
+                    </div>
+                    <div class="card-body">
+                        <label for="dataSize">Data Size:</label>
+                        <select id="dataSize">
+                            <option value="10">10</option>
+                            <option value="15">15</option>
+                            <option value="20">20</option>
+                            <option value="30">30</option>
+                            <option value="40">40</option>
+                            <option value="50" selected>50</option>
+                        </select>
+                        <label for="speedMode">Speed Mode:</label>
+                        <select id="speedMode">
+                        <option value="slow">Slow</option>
+                        <option value="regular" >Regular</option>
+                        <option value="fast" selected>Fast</option>
+                        </select>
+                        <div class="row">
+                            <div class="col-md-8">
+                                <select id="algorithm" class="form-control">
+                                    <option value="bubbleSort">Bubble Sort</option>
+                                    <option value="selectionSort">Selection Sort</option>
+                                    <option value="quickSort">Quick Sort</option>
+                                    <option value="insertionSort">Insertion Sort</option>
+                                    <option value="mergeSort" selected>Merge Sort</option>
+                                    <option value="cocktailShakerSort">Cocktail Shaker Sort</option>
+                                    <option value="heapSort">Heap Sort</option>
+                                    <option value="gnomeSort">Gnome Sort</option>
+                                    <option value="pancakeSort">Pancake Sort</option>
+                                    <option value="radixSort">Radix Sort</option>
+                                    <option value="combSort">Comb Sort</option>
+                                    <option value="timsort">TimSort</option>
+                                </select>
+                            </div>
+                            <div class="col-md-4">
+                                <button onclick="startVisualization()" class="btn btn-primary btn-block">Start Visualization</button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <svg height="500" id="visualization"></svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    
+
+    <script src="script.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
