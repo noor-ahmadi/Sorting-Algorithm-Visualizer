@@ -1,4 +1,4 @@
-const socket = io.connect("http://localhost:3000");
+const socket = io.connect(window.location.origin);
 const svg = d3.select("#visualization");
 const width = +svg.node().getBoundingClientRect().width;
 const height = +svg.attr("height");
